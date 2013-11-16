@@ -1,0 +1,16 @@
+﻿@inherits InfinityScript.WebViewBase
+
+<h1>Associate Server</h1>
+<p>As this server does not have any owner associated with it, we'd like to invite you to associate yourself as an owner for this server. Please enter the server's remote console (rcon) password below. This can be found in your server's console by typing 'rcon_password'.</p>
+
+@if (Model.ErrorMsg != null && Model.ErrorMsg != "")
+{
+    <div class="alert alert-error">@Model.ErrorMsg</div>
+}
+
+<form method="post">
+    <label>Remote console password</label>
+    <input type="text" name="password" /><br />
+
+    <button type="submit" class="btn">Associate</button>
+</form>

@@ -1,0 +1,60 @@
+﻿@using InfinityScript
+@inherits WebViewBase
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+
+    <script type="text/javascript" src="@Url.Content("~/assets/js/jquery.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/jquery.jqplot.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/jqplot.cursor.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/jqplot.dateAxisRenderer.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/jqplot.highlighter.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/assets/js/nacp.js")"></script>
+
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/bootstrap.min.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/nacp.css")" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">IW4M <span>@StripColors(WebBaseScript.HostName)</span></a>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+
+        @if (ViewBag.LoggedIn)
+        {
+            <div class="span10">
+                @RenderBody()
+            </div>
+
+            <div class="span2">
+                Hi, @ViewBag.UserName!
+
+                <ul class="nav nav-list">
+                    <li><a href="@Url.Content("~/")"><i class="icon-home"></i> Home</a></li>
+                    <li><a href="@Url.Content("~/playlists")"><i class="icon-list"></i> Playlists</a></li>
+                </ul>
+            </div>
+        }
+        else
+        {
+            <div class="span12">
+                @RenderBody()
+            </div>
+        }
+
+        </div>
+    </div>
+</body>
+</html>

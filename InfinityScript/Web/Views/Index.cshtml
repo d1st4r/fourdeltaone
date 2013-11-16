@@ -1,0 +1,54 @@
+﻿@inherits InfinityScript.WebViewBase
+@using InfinityScript
+
+<div class="span6">
+    <h1>Server status</h1>
+
+    <div class="serverinfo">
+        <div class="span9">
+            <img src="http://fourdeltaone.net/assets/img/maps/loadscreen_@(Model.MapName).jpg" />
+        </div>
+        <div class="span3">
+            <span>@Model.MapName - @Model.GameType<br />@Model.PlayerCount/@Model.PlayerLimit players</span>
+        </div>
+    </div>
+</div>
+
+<div class="span6">
+    <h1>Player count</h1>
+
+    <div id="chart" style="height: 280px;"></div>
+
+    <script type="text/ecmascript">
+        var playerData = [
+            @foreach (PlayerCountStatisticPoint item in Model.StatPoints)
+            {
+                <text>[</text>@((item.Time - new DateTime(1970, 1, 1)).TotalMilliseconds)<text>, </text> @item.PlayerCount<text>],</text>
+            }
+        ];
+
+        $(function () {
+            $.jqplot('chart', [playerData], {
+                axes:
+                {
+                    xaxis:
+                    {
+                        renderer: $.jqplot.DateAxisRenderer,
+                        tickOptions:
+                        {
+                            formatString: '%H:%M'
+                        },
+                    },
+                },
+                highlighter:
+                {
+                    show: true
+                },
+                cursor:
+                {
+                    show: false
+                }
+            });
+        });
+    </script>
+</div>

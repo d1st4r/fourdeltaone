@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Normal|Win32">
+      <Configuration>Normal</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EF6AF76D-40D1-45B5-B665-D3004F3EE9A8}</ProjectGuid>
+    <RootNamespace>steam_api</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\lc.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'">
+    <PreBuildEvent>
+      <Command>pushd "$(SolutionDir)\dependencies\tools"
+call "$(SolutionDir)\dependencies\tools\svnrev.cmd"
+popd
+</Command>
+    </PreBuildEvent>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\dependencies\include\cef;$(SolutionDir)\dependencies\include\python;$(SolutionDir)\dependencies\include\np;$(SolutionDir)\dependencies\include\osw;$(SolutionDir)\dependencies\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_WINDLL;_USRDLL;STEAM_API_EXPORTS;PRE_RELEASE_DEMO;D3D_EXPEROMINTS;OLD_CRUFTY_CRUFT</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdInc.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <OmitFramePointers>false</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/ignore:4248 /ignore:4049 /ignore:4099 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>libpng.lib;mono.lib;ws2_32.lib;winmm.lib;libcurl.lib;wldap32.lib;dbghelp.lib;pdcurses.lib;tinyxml.lib;mongoose.lib;libnp.lib;credui.lib;zlib.lib;python32.lib;python32_socket.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(TargetPath)</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)\dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>
+      </FixedBaseAddress>
+      <TargetMachine>MachineX86</TargetMachine>
+      <MapFileName>$(TargetDir)$(TargetName).map</MapFileName>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AssemblyDebug>true</AssemblyDebug>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AdminPlugin.cpp" />
+    <ClCompile Include="Auth.cpp" />
+    <ClCompile Include="diskinfo.cpp" />
+    <ClCompile Include="DLCInstaller.cpp" />
+    <ClCompile Include="ExtScript.cpp" />
+    <ClCompile Include="GameInterface.cpp" />
+    <ClCompile Include="HiddenAssets.cpp" />
+    <ClCompile Include="hidecode.cpp" />
+    <ClCompile Include="Hooking.cpp" />
+    <ClCompile Include="HTTPService.cpp" />
+    <ClCompile Include="hwbrk.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MW2.cpp" />
+    <ClCompile Include="myIDirect3D9.cpp" />
+    <ClCompile Include="myIDirect3DDevice9.cpp" />
+    <ClCompile Include="PatchMW2.cpp" />
+    <ClCompile Include="PatchMW2ArenaLength.cpp" />
+    <ClCompile Include="PatchMW2AssetRestrict.cpp" />
+    <ClCompile Include="PatchMW2Branding.cpp" />
+    <ClCompile Include="PatchMW2ClientCommands.cpp" />
+    <ClCompile Include="PatchMW2ClientConsole.cpp" />
+    <ClCompile Include="PatchMW2ClientDvar.cpp" />
+    <ClCompile Include="PatchMW2CModels.cpp" />
+    <ClCompile Include="PatchMW2Console.cpp" />
+    <ClCompile Include="PatchMW2ConsoleTitle.cpp" />
+    <ClCompile Include="PatchMW2Dedicated.cpp" />
+    <ClCompile Include="PatchMW2DediConfig.cpp" />
+    <ClCompile Include="PatchMW2DediSlowmotion.cpp" />
+    <ClCompile Include="PatchMW2FrameRateSV.cpp" />
+    <ClCompile Include="PatchMW2FrameTime.cpp" />
+    <ClCompile Include="PatchMW2PartialWeaponry.cpp" />
+    <ClCompile Include="PatchMW2RecordingSV.cpp" />
+    <ClCompile Include="PatchMW2DemoRecording.cpp" />
+    <ClCompile Include="PatchMW2DownloadCL.cpp" />
+    <ClCompile Include="PatchMW2DownloadSV.cpp" />
+    <ClCompile Include="PatchMW2DumpModel.cpp" />
+    <ClCompile Include="PatchMW2Dvars.cpp" />
+    <ClCompile Include="PatchMW2Experiments.cpp" />
+    <ClCompile Include="PatchMW2Extrasensory.cpp" />
+    <ClCompile Include="PatchMW2FifthInfinity.cpp" />
+    <ClCompile Include="PatchMW2FilePointers.cpp" />
+    <ClCompile Include="PatchMW2Friends.cpp" />
+    <ClCompile Include="PatchMW2FXAA.cpp" />
+    <ClCompile Include="PatchMW2IGMenu.cpp" />
+    <ClCompile Include="PatchMW2Legacy.cpp" />
+    <ClCompile Include="PatchMW2Load.cpp" />
+    <ClCompile Include="PatchMW2Loadscreens.cpp" />
+    <ClCompile Include="PatchMW2LoadVehicleDef.cpp" />
+    <ClCompile Include="PatchMW2LocalizedStrings.cpp" />
+    <ClCompile Include="PatchMW2LogInitGame.cpp" />
+    <ClCompile Include="PatchMW2MatchData.cpp" />
+    <ClCompile Include="PatchMW2MatchRecord.cpp" />
+    <ClCompile Include="PatchMW2Materialism.cpp" />
+    <ClCompile Include="PatchMW2MaxClients.cpp" />
+    <ClCompile Include="PatchMW2MaxClientsCL.cpp" />
+    <ClCompile Include="PatchMW2MaxClientsSV.cpp" />
+    <ClCompile Include="PatchMW2ModList.cpp" />
+    <ClCompile Include="PatchMW2MusicalTalent.cpp" />
+    <ClCompile Include="PatchMW2NClient.cpp" />
+    <ClCompile Include="PatchMW2NewsTicker.cpp" />
+    <ClCompile Include="PatchMW2NoBorder.cpp" />
+    <ClCompile Include="PatchMW2OOB.cpp" />
+    <ClCompile Include="PatchMW2PartyBypass.cpp" />
+    <ClCompile Include="PatchMW2Playlists.cpp" />
+    <ClCompile Include="PatchMW2PreAuthenticate.cpp" />
+    <ClCompile Include="PatchMW2Prefix.cpp" />
+    <ClCompile Include="PatchMW2ProtoSix.cpp" />
+    <ClCompile Include="PatchMW2RecoverDevice.cpp" />
+    <ClCompile Include="PatchMW2Redirect.cpp" />
+    <ClCompile Include="PatchMW2RemoteConsoleCL.cpp" />
+    <ClCompile Include="PatchMW2RemoteConsoleSV.cpp" />
+    <ClCompile Include="PatchMW2Repro.cpp" />
+    <ClCompile Include="PatchMW2ScoreboardInfo.cpp" />
+    <ClCompile Include="PatchMW2ScriptCompileDebug.cpp" />
+    <ClCompile Include="PatchMW2ServerList.cpp" />
+    <ClCompile Include="PatchMW2SPMaps.cpp" />
+    <ClCompile Include="PatchMW2Stats.cpp" />
+    <ClCompile Include="PatchMW2Status.cpp" />
+    <ClCompile Include="PatchMW2StringList.cpp" />
+    <ClCompile Include="PatchMW2StringTable.cpp" />
+    <ClCompile Include="PatchMW2SuicideMessages.cpp" />
+    <ClCompile Include="PatchMW2UILoading.cpp" />
+    <ClCompile Include="PatchMW2UIScripts.cpp" />
+    <ClCompile Include="PatchMW2Uncoupling.cpp" />
+    <ClCompile Include="PatchMW2Voting.cpp" />
+    <ClCompile Include="PatchMW2WeaponCamos.cpp" />
+    <ClCompile Include="PatchMW2XPBar.cpp" />
+    <ClCompile Include="Script.cpp" />
+    <ClCompile Include="ServerStorage.cpp" />
+    <ClCompile Include="StdInc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Normal|Win32'">StdInc.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="SteamAPI.cpp" />
+    <ClCompile Include="SteamBase.cpp" />
+    <ClCompile Include="SteamFriends005.cpp" />
+    <ClCompile Include="SteamGameServer009.cpp" />
+    <ClCompile Include="SteamMasterServerUpdater001.cpp" />
+    <ClCompile Include="SteamMatchmaking007.cpp" />
+    <ClCompile Include="SteamNetworking003.cpp" />
+    <ClCompile Include="SteamProxy.cpp" />
+    <ClCompile Include="SteamRemoteStorage002.cpp" />
+    <ClCompile Include="SteamUser012.cpp" />
+    <ClCompile Include="SteamUtils005.cpp" />
+    <ClCompile Include="UserAvatars.cpp" />
+    <ClCompile Include="Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdminPlugin.h" />
+    <ClInclude Include="diskinfo.h" />
+    <ClInclude Include="ExtDLL.h" />
+    <ClInclude Include="ExtScript.h" />
+    <ClInclude Include="Hooking.h" />
+    <ClInclude Include="hwbrk.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="MW2.h" />
+    <ClInclude Include="myIDirect3D9.h" />
+    <ClInclude Include="myIDirect3DDevice9.h" />
+    <ClInclude Include="NUI.h" />
+    <ClInclude Include="PartialWeaponry.h" />
+    <ClInclude Include="PatchMW2ServerList.h" />
+    <ClInclude Include="PatchMW2UIScripts.h" />
+    <ClInclude Include="PatchMW2Voting.h" />
+    <ClInclude Include="Recording.h" />
+    <ClInclude Include="s10e5.h" />
+    <ClInclude Include="Script.h" />
+    <ClInclude Include="ServerStorage.h" />
+    <ClInclude Include="StdInc.h" />
+    <ClInclude Include="SteamBase.h" />
+    <ClInclude Include="SteamFriends005.h" />
+    <ClInclude Include="SteamGameServer009.h" />
+    <ClInclude Include="SteamMasterServerUpdater001.h" />
+    <ClInclude Include="SteamMatchmaking007.h" />
+    <ClInclude Include="SteamNetworking003.h" />
+    <ClInclude Include="SteamRemoteStorage002.h" />
+    <ClInclude Include="SteamUser012.h" />
+    <ClInclude Include="SteamUtils005.h" />
+    <ClInclude Include="Utils.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\lc.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

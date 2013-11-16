@@ -1,0 +1,13 @@
+﻿@inherits InfinityScript.WebViewBase
+
+<h1>Welcome</h1>
+<p>To administer this server, please log in with your fourDeltaOne account below.</p>
+
+@if (Model.ErrorMsg != "")
+{
+    <div class="alert alert-error">@Model.ErrorMsg</div>
+}
+
+<form method="post">
+    <button type="submit" class="btn btn-primary">Sign in to fourDeltaOne</button>
+</form>

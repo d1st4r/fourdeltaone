@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5EDFA999-EB9D-4966-B10C-56D405AF421E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InfinityScript</RootNamespace>
+    <AssemblyName>InfinityScript</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Community.CsharpSqlite">
+      <HintPath>bin\Community.CsharpSqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.0.17.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.Razor">
+      <HintPath>..\packages\Nancy.Viewengines.Razor.0.17.1\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.ViewEngines.Razor.BuildProviders">
+      <HintPath>bin\Nancy.ViewEngines.Razor.BuildProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Razor.Unofficial">
+      <HintPath>..\packages\System.Web.Razor.Unofficial.2.0.2\lib\net40\System.Web.Razor.Unofficial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\GameInterface.cs" />
+    <Compile Include="Base\Log.cs" />
+    <Compile Include="Base\Logging\ConsoleLogListener.cs" />
+    <Compile Include="Base\Logging\FileLogListener.cs" />
+    <Compile Include="Base\Logging\GameLogListener.cs" />
+    <Compile Include="Base\Logging\ILogListener.cs" />
+    <Compile Include="Base\Logging\LogLevel.cs" />
+    <Compile Include="Base\Logging\TraceLogListener.cs" />
+    <Compile Include="Base\SHManager.cs" />
+    <Compile Include="Base\Tokenizer.cs" />
+    <Compile Include="Base\Vector3.cs" />
+    <Compile Include="Classes\HudElem.cs" />
+    <Compile Include="ScriptProcessor\ScriptDynamics.cs" />
+    <Compile Include="Classes\Utilities.cs" />
+    <Compile Include="nACP\PlaylistManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\BaseScript.cs" />
+    <Compile Include="Classes\Entity.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptProcessor\Function.cs" />
+    <Compile Include="ScriptProcessor\Notifiable.cs" />
+    <Compile Include="ScriptProcessor\Parameter.cs" />
+    <Compile Include="ScriptProcessor\ScriptLoader.cs" />
+    <Compile Include="ScriptProcessor\ScriptNames.cs" />
+    <Compile Include="ScriptProcessor\ScriptProcessor.cs" />
+    <Compile Include="Scripts\GameLog.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="TestScript.cs" />
+    <Compile Include="Web\Models\DataModel.cs" />
+    <Compile Include="Web\WebAuth.cs" />
+    <Compile Include="Web\WebBaseScript.cs" />
+    <Compile Include="Web\WebBootstrapper.cs" />
+    <Compile Include="Web\WebFrontend.cs" />
+    <Compile Include="Web\WebHome.cs" />
+    <Compile Include="Web\WebManager.cs" />
+    <Compile Include="Web\WebPlaylists.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web\Views\AuthenticateSSO.cshtml" />
+    <None Include="Web\Views\AssociateServer.cshtml" />
+    <None Include="Web\Views\Playlists.cshtml" />
+    <None Include="Web\Views\_Layout.cshtml" />
+    <Resource Include="Web\Views\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Web\Assets\css\bootstrap.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web\Assets\css\nacp.css" />
+    <Content Include="Web\Assets\js\jqplot.cursor.min.js" />
+    <Content Include="Web\Assets\js\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="Web\Assets\js\jqplot.highlighter.min.js" />
+    <Content Include="Web\Assets\js\jquery.jqplot.js" />
+    <Content Include="Web\Assets\js\jquery.js" />
+    <Content Include="Web\Assets\js\nacp.js" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>if "%25COMPUTERNAME%25" == "FALLARBOR" (
+  copy /y "$(TargetPath)" "S:\games\steam\steamapps\common\zero gear\server\InfinityScript.dll"
+  xcopy /y /e "$(ProjectDir)\Web\Assets" "S:\games\steam\steamapps\common\zero gear\server\scripts\assets\"
+  xcopy /y /e "$(ProjectDir)\Web\Views\*.*" "S:\games\steam\steamapps\common\zero gear\server\scripts\views"
+) else (
+  copy /y "$(TargetPath)" "E:\mm\mw2\InfinityScript.dll"
+  xcopy /y /e "$(ProjectDir)\Web\Assets" "E:\mm\mw2\scripts\assets\"
+  copy /y "$(ProjectDir)\Web\Views\*.*" "E:\mm\mw2\scripts\views"
+)
+if $(ConfigurationName) == Debug (
+xcopy /s /y /R "$(SolutionDir)packages\Nancy.Viewengines.Razor.0.17.1\BuildProviders\Nancy.ViewEngines.Razor.BuildProviders.dll" "$(ProjectDir)bin\"
+xcopy /s /y /R "$(SolutionDir)packages\Nancy.Viewengines.Razor.0.17.1\lib\Net40\Nancy.ViewEngines.Razor.dll" "$(ProjectDir)bin\"
+)</PostBuildEvent>
+  </PropertyGroup>
+</Project>

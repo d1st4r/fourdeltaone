@@ -1,0 +1,15 @@
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\bin\Debug\InfinityScript.dll.config
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\bin\Debug\InfinityScript.dll
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\bin\Debug\InfinityScript.pdb
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\bin\Debug\Community.CsharpSqlite.dll
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\bin\Debug\Nancy.dll
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\bin\Debug\Nancy.ViewEngines.Razor.dll
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\bin\Debug\System.Web.Razor.Unofficial.dll
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\obj\Debug\ResolveAssemblyReference.cache
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\obj\Debug\InfinityScript.g.resources
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\obj\Debug\InfinityScript.Properties.Resources.resources
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\obj\Debug\GenerateResource.read.1.tlog
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\obj\Debug\GenerateResource.write.1.tlog
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\obj\Debug\InfinityScript.dll
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\obj\Debug\InfinityScript.pdb
+D:\games\Call of Duty\codmw2\1\1\InfinityScript\bin\Debug\Nancy.ViewEngines.Razor.BuildProviders.dll

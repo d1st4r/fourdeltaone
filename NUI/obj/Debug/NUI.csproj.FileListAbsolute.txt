@@ -1,0 +1,7 @@
+D:\games\Call of Duty\codmw2\1\1\NUI\bin\Debug\NUI.dll
+D:\games\Call of Duty\codmw2\1\1\NUI\bin\Debug\NUI.pdb
+D:\games\Call of Duty\codmw2\1\1\NUI\bin\Debug\Newtonsoft.Json.dll
+D:\games\Call of Duty\codmw2\1\1\NUI\bin\Debug\Newtonsoft.Json.xml
+D:\games\Call of Duty\codmw2\1\1\NUI\obj\Debug\ResolveAssemblyReference.cache
+D:\games\Call of Duty\codmw2\1\1\NUI\obj\Debug\NUI.dll
+D:\games\Call of Duty\codmw2\1\1\NUI\obj\Debug\NUI.pdb
